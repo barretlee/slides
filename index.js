@@ -198,7 +198,7 @@ function nextSlide() {
 function prevSlide() {
   const curr = current()
   const prev = curr.previousElementSibling
-  if (prev) {
+  if (prev && next.matches('.slide')) {
     --slideIndex
     curr.classList.toggle('current')
     prev.classList.toggle('current')
