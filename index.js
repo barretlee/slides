@@ -34,7 +34,6 @@ function takahashi(markdownUrl) {
     .then(parseContent)
     .then(createSlides)
     .then(startPresentation)
-  document.querySelector('.loading').style.display = 'none'
 }
 
 function parseContent(text) {
@@ -134,6 +133,7 @@ function startPresentation() {
   }
 
   initSlide()
+  document.querySelector('.loading').style.display = 'none'
   window.onhashchange = initSlide
   window.onpopstate = e => {
     showSlide(parseInt(e.state))
