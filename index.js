@@ -18,6 +18,7 @@ if(withoutControl) {
 }
 if(mdSource === 'cc') {
   mdSource = 'demo'
+  withoutControl = true
 } else {
   mdSource = mdSource ? mdSource : 'demo'
 }
