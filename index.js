@@ -34,6 +34,7 @@ function takahashi(markdownUrl) {
     .then(parseContent)
     .then(createSlides)
     .then(startPresentation)
+  document.querySelector('.loading').style.display = 'none'
 }
 
 function parseContent(text) {
