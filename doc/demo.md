@@ -7,8 +7,8 @@ by 小胡子哥
 ## 一个
   简单的自我介绍
 
-淘宝网
-www.taobao.com
+**淘宝网**
+**www.taobao.com**
 
 github: @barretlee
 weibo: @Barret李靖
