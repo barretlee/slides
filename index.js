@@ -202,6 +202,9 @@ function prevSlide() {
   //console.log(prev)
   if (prev) {
     --slideIndex
+    if(slideIndex < 0) {
+      return
+    }
     curr.classList.toggle('current')
     prev.classList.toggle('current')
     pushState()
