@@ -209,6 +209,7 @@ function prevSlide() {
 
 let slideIndex
 function pushState() {
+  slideIndex = slideIndex < 0 ? 0 : slideIndex;
   history.pushState(slideIndex, '', `#${slideIndex}`)
 }
 
