@@ -199,12 +199,8 @@ function nextSlide() {
 function prevSlide() {
   const curr = current()
   const prev = curr.previousElementSibling
-  //console.log(prev)
-  if (prev) {
+  if (prev && slideIndex > 0) {
     --slideIndex
-    if(slideIndex < 0) {
-      return
-    }
     curr.classList.toggle('current')
     prev.classList.toggle('current')
     pushState()
