@@ -200,6 +200,10 @@ function prevSlide() {
   const prev = curr.previousElementSibling
   if (prev) {
     --slideIndex
+    if(slideIndex < 0) {
+      slideIndex++;
+      return
+    }
     curr.classList.toggle('current')
     prev.classList.toggle('current')
     pushState()
@@ -209,7 +213,6 @@ function prevSlide() {
 
 let slideIndex
 function pushState() {
-  slideIndex = slideIndex < 0 ? 0 : slideIndex;
   history.pushState(slideIndex, '', `#${slideIndex}`)
 }
 
