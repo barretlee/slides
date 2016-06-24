@@ -134,7 +134,7 @@ function startPresentation() {
   })
 
   if(!withoutControl) {
-    controls.style.display = 'none'
+    controls.style.opacity = 0
   }
 
   initSlide()
