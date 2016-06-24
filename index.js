@@ -186,7 +186,6 @@ function nextSlide() {
     return
   }
   const next = curr.nextElementSibling
-  // console.log(next)
   if (next && next.matches('.slide')) {
     ++slideIndex
     next.classList.toggle('current')
@@ -199,7 +198,7 @@ function nextSlide() {
 function prevSlide() {
   const curr = current()
   const prev = curr.previousElementSibling
-  if (prev && slideIndex > 0) {
+  if (prev) {
     --slideIndex
     curr.classList.toggle('current')
     prev.classList.toggle('current')
@@ -232,6 +231,7 @@ function isReplacedElement(e) {
 }
 
 function adjustSlide(curr, size) {
+  if(!curr) return
   curr.style.visibility = 'hidden'
   curr.style.transform = null
   Array.from(curr.childNodes).forEach(e => {
