@@ -34,6 +34,9 @@ function takahashi(markdownUrl) {
     .then(parseContent)
     .then(createSlides)
     .then(startPresentation)
+    .catch(function() {
+      document.write('请求 slide 数据出错')
+    })
 }
 
 function parseContent(text) {
