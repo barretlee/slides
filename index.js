@@ -118,21 +118,23 @@ function createSlides(slides) {
 }
 
 function startPresentation() {
+  const controls = document.createElement('div')
+  controls.classList.add('controls')
+  controls.style.position = 'fixed'
+  controls.style.bottom = '0'
+  controls.style.left = '0'
+  controls.style.right = '0'
+  controls.style.color = 'gray'
+  controls.style.opacity = '0.6'
+  controls.innerHTML = '<button class="prev" style="width: 38%; height: 48px">&lt;</button><button class="next" style="width: 61%; height: 48px">&gt;</button>'
+  document.body.appendChild(controls)
+  controls.addEventListener('click', event => {
+    if  (event.target.matches('button.next')) nextSlide()
+    else if (event.target.matches('button.prev')) prevSlide()
+  })
+
   if(!withoutControl) {
-    const controls = document.createElement('div')
-    controls.classList.add('controls')
-    controls.style.position = 'fixed'
-    controls.style.bottom = '0'
-    controls.style.left = '0'
-    controls.style.right = '0'
-    controls.style.color = 'gray'
-    controls.style.opacity = '0.6'
-    controls.innerHTML = '<button class="prev" style="width: 38%; height: 48px">&lt;</button><button class="next" style="width: 61%; height: 48px">&gt;</button>'
-    document.body.appendChild(controls)
-    controls.addEventListener('click', event => {
-      if  (event.target.matches('button.next')) nextSlide()
-      else if (event.target.matches('button.prev')) prevSlide()
-    })
+    controls.style.display = 'none'
   }
 
   initSlide()
