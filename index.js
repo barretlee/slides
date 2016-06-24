@@ -16,7 +16,11 @@ let mdSource = location.search.slice(1)
 if(withoutControl) {
   mdSource = mdSource.replace(/&cc|cc&/, '')
 }
-mdSource = mdSource ? mdSource : 'demo'
+if(mdSource === 'cc') {
+  mdSource = 'demo'
+} else {
+  mdSource = mdSource ? mdSource : 'demo'
+}
 takahashi('doc/' + mdSource + '.md')
 
 function takahashi(markdownUrl) {
