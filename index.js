@@ -3,7 +3,15 @@
  * @ref: http://johnhax.net/takahashi/index.js
  */
 
-window.fetch && window.Promise || document.write('观赏本 slide 请使用 Chrome 45+ 等支持 ES6 新特性的浏览器')
+function showErr(msg) {
+  document.querySelector('.loading').innerHTML = msg;
+}
+
+window.onerror = function(e) {
+  showErr(e);
+}
+
+window.fetch && window.Promise || showErr('观赏本 slide 请使用 Chrome 45+ 等支持 ES6 新特性的浏览器')
 
 void function() {
 'use strict' // for Chrome 47-
@@ -33,7 +41,7 @@ function takahashi(markdownUrl) {
     .then(createSlides)
     .then(startPresentation)
     .catch(function() {
-      document.write('请求 slide 数据出错')
+      showErr('请求 slide 数据出错')
     })
 }
 
