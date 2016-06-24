@@ -3,9 +3,7 @@
  * @ref: http://johnhax.net/takahashi/index.js
  */
 
-window.onerror = function() {
-  document.write('观赏本 slide 请使用 Chrome 45+ 等支持 ES6 新特性的浏览器')
-}
+window.fetch && window.Promise || document.write('观赏本 slide 请使用 Chrome 45+ 等支持 ES6 新特性的浏览器')
 
 void function() {
 'use strict' // for Chrome 47-
@@ -133,7 +131,7 @@ function startPresentation() {
     else if (event.target.matches('button.prev')) prevSlide()
   })
 
-  if(!withoutControl) {
+  if(withoutControl) {
     controls.style.opacity = 0
   }
 
