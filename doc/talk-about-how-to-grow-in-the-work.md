@@ -13,7 +13,7 @@ by 小胡子哥
 github: @barretlee
 weibo: @Barret李靖
 
-![微信](../resource/wechart.png)
+![微信](../resources/wechart.png)
 
 Takahashi Method
 高橋流簡報法
