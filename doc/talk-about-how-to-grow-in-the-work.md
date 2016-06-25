@@ -109,3 +109,7 @@ Takahashi Method
 平均每周一篇，**并不多**
 
 
+
+Q & A
+
+![微信加好友](./resources/wechart.png)
